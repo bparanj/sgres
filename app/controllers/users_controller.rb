@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def index
     respond_to do |format|
       @users = if params[:term]
-        User.search_by_full_name(params[:term]).with_pg_search_highlight
+        User.multisearchable(params[:term])
       else
         User.all
       end

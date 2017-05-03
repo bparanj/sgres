@@ -1,24 +1,13 @@
-# README
+pg_search_scope :search_by_full_name, against: :name,
+    using: { tsearch: { any_word: true } }
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Search for all records that contains the term (separated by spaces) in the first name. 
 
-Things you may want to cover:
+pg_search_scope :search_by_full_name, against: {
+    name: 'A',
+    surname: 'B'
+}
 
-* Ruby version
+First name higher rank than surname.
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
