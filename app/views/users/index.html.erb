@@ -1,2 +1,8 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<%= form_tag users_path, method: :get do %>
+  <%= text_field_tag 'term', params[:term], placeholder: 'Enter user name or surname' %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<ul>
+  <%= render @users %>
+</ul>

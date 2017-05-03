@@ -12,4 +12,7 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require underscore
+//= require select2
+//= require messages    
 //= require_tree .
